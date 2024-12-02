@@ -1,0 +1,27 @@
+aid: bureau-of-reclamation
+name: Bureau of Reclamation
+description: Bureau of Reclamation - Managing water and power in the West
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - API
+created: '2024-11-30'
+modified: '2024-11-30'
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/bureau-of-reclamation/refs/heads/main/apis.yml
+specificationVersion: '0.19'
+apis:
+  - aid: bureau-of-reclamation:bureau-of-reclamation
+    name: Bureau of Reclamation
+    description: Bureau of Reclamation - Managing water and power in the West
+    humanURL: https://data.usbr.gov/rise-api
+    tags:
+      - API
+    properties:
+      - type: Documentation
+        url: https://data.usbr.gov/rise-api
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com
