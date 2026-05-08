@@ -39,6 +39,8 @@ apis:
         type: Portal
       - url: https://catalog.data.gov/dataset?organization=usbr-gov
         type: DataAPI
+      - url: openapi/bureau-of-reclamation-openapi.yml
+        type: OpenAPI
     description: >-
       The RISE API allows users to query Bureau of Reclamation water resource
       data programmatically, returning JSON objects. For Geospatial and File

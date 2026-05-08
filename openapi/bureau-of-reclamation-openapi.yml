@@ -1,0 +1,238 @@
+openapi: 3.1.0
+info:
+  title: Reclamation Information Sharing Environment (RISE) API
+  version: "1.0"
+  description: >-
+    Minimal OpenAPI 3.1 description of the Bureau of Reclamation's RISE API,
+    which exposes catalog, location, parameter, model run, and time series
+    result resources for water resource data across Reclamation regions.
+  x-generated-from: https://data.usbr.gov/rise/api
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+  - url: https://data.usbr.gov/rise/api
+    description: Production
+tags:
+  - name: Catalog
+  - name: Locations
+  - name: Parameters
+  - name: Model Runs
+  - name: Results
+  - name: Reference Data
+paths:
+  /catalog-item:
+    get:
+      tags: [Catalog]
+      summary: List catalog items
+      operationId: listCatalogItems
+      parameters:
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/ItemsPerPageParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/CollectionResponse' }
+  /catalog-record:
+    get:
+      tags: [Catalog]
+      summary: List catalog records
+      operationId: listCatalogRecords
+      parameters:
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/ItemsPerPageParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/CollectionResponse' }
+  /catalog-theme-type:
+    get:
+      tags: [Catalog]
+      summary: List catalog theme types
+      operationId: listCatalogThemeTypes
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/CollectionResponse' }
+  /generation-effort:
+    get:
+      tags: [Reference Data]
+      summary: List generation efforts
+      operationId: listGenerationEfforts
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/CollectionResponse' }
+  /item-structure:
+    get:
+      tags: [Catalog]
+      summary: List item structures
+      operationId: listItemStructures
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/CollectionResponse' }
+  /location:
+    get:
+      tags: [Locations]
+      summary: List monitoring locations
+      operationId: listLocations
+      parameters:
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/ItemsPerPageParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/CollectionResponse' }
+  /location-type:
+    get:
+      tags: [Locations]
+      summary: List location types
+      operationId: listLocationTypes
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/CollectionResponse' }
+  /model-name:
+    get:
+      tags: [Model Runs]
+      summary: List model names
+      operationId: listModelNames
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/CollectionResponse' }
+  /model-run:
+    get:
+      tags: [Model Runs]
+      summary: List model runs
+      operationId: listModelRuns
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/CollectionResponse' }
+  /model-run-member:
+    get:
+      tags: [Model Runs]
+      summary: List model run members
+      operationId: listModelRunMembers
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/CollectionResponse' }
+  /parameter:
+    get:
+      tags: [Parameters]
+      summary: List parameters
+      operationId: listParameters
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/CollectionResponse' }
+  /parameter-group:
+    get:
+      tags: [Parameters]
+      summary: List parameter groups
+      operationId: listParameterGroups
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/CollectionResponse' }
+  /reclamation-region:
+    get:
+      tags: [Reference Data]
+      summary: List Reclamation regions
+      operationId: listReclamationRegions
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/CollectionResponse' }
+  /result:
+    get:
+      tags: [Results]
+      summary: List time series results
+      operationId: listResults
+      parameters:
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/ItemsPerPageParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/CollectionResponse' }
+  /state:
+    get:
+      tags: [Reference Data]
+      summary: List states
+      operationId: listStates
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/CollectionResponse' }
+  /sub-theme:
+    get:
+      tags: [Catalog]
+      summary: List sub-themes
+      operationId: listSubThemes
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/CollectionResponse' }
+  /unified-region:
+    get:
+      tags: [Reference Data]
+      summary: List unified regions
+      operationId: listUnifiedRegions
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/CollectionResponse' }
+components:
+  parameters:
+    PageParam:
+      name: page
+      in: query
+      schema:
+        type: integer
+        minimum: 1
+    ItemsPerPageParam:
+      name: itemsPerPage
+      in: query
+      schema:
+        type: integer
+        minimum: 1
+  schemas:
+    CollectionResponse:
+      type: object
+      additionalProperties: true
