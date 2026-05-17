@@ -10,7 +10,7 @@ tags:
   - Hydrology
   - Reservoirs
 type: Index
-x-type: government
+kind: government
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 created: '2024-11-30'
@@ -83,7 +83,7 @@ common:
     url: https://www.usbr.gov
   - type: Portal
     url: https://data.usbr.gov/
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://www.usbr.gov/privacy.html
   - type: Data Portal
     url: https://catalog.data.gov/dataset?organization=usbr-gov
