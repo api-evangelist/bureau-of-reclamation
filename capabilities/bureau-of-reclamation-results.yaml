@@ -1,0 +1,68 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Reclamation Information Sharing Environment (RISE) API — Results
+  description: 'Reclamation Information Sharing Environment (RISE) API — Results. 1 operations. Lead operation: List time
+    series results. Self-contained Naftiko capability covering one Bureau Of Reclamation business surface.'
+  tags:
+  - Bureau Of Reclamation
+  - Results
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    BUREAU_OF_RECLAMATION_API_KEY: BUREAU_OF_RECLAMATION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: bureau-of-reclamation-results
+    baseUri: https://data.usbr.gov/rise/api
+    description: Reclamation Information Sharing Environment (RISE) API — Results business capability. Self-contained, no
+      shared references.
+    resources:
+    - name: result
+      path: /result
+      operations:
+      - name: listresults
+        method: GET
+        description: List time series results
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: bureau-of-reclamation-results-rest
+    port: 8080
+    description: REST adapter for Reclamation Information Sharing Environment (RISE) API — Results. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/result
+      name: result
+      description: REST surface for result.
+      operations:
+      - method: GET
+        name: listresults
+        description: List time series results
+        call: bureau-of-reclamation-results.listresults
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: bureau-of-reclamation-results-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Reclamation Information Sharing Environment (RISE) API — Results. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: list-time-series-results
+      description: List time series results
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: bureau-of-reclamation-results.listresults
+      outputParameters:
+      - type: object
+        mapping: $.

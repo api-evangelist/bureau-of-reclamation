@@ -1,0 +1,164 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Reclamation Information Sharing Environment (RISE) API — Reference Data
+  description: 'Reclamation Information Sharing Environment (RISE) API — Reference Data. 4 operations. Lead operation: List
+    generation efforts. Self-contained Naftiko capability covering one Bureau Of Reclamation business surface.'
+  tags:
+  - Bureau Of Reclamation
+  - Reference Data
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    BUREAU_OF_RECLAMATION_API_KEY: BUREAU_OF_RECLAMATION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: bureau-of-reclamation-reference-data
+    baseUri: https://data.usbr.gov/rise/api
+    description: Reclamation Information Sharing Environment (RISE) API — Reference Data business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: generation-effort
+      path: /generation-effort
+      operations:
+      - name: listgenerationefforts
+        method: GET
+        description: List generation efforts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: reclamation-region
+      path: /reclamation-region
+      operations:
+      - name: listreclamationregions
+        method: GET
+        description: List Reclamation regions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: state
+      path: /state
+      operations:
+      - name: liststates
+        method: GET
+        description: List states
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: unified-region
+      path: /unified-region
+      operations:
+      - name: listunifiedregions
+        method: GET
+        description: List unified regions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: bureau-of-reclamation-reference-data-rest
+    port: 8080
+    description: REST adapter for Reclamation Information Sharing Environment (RISE) API — Reference Data. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/generation-effort
+      name: generation-effort
+      description: REST surface for generation-effort.
+      operations:
+      - method: GET
+        name: listgenerationefforts
+        description: List generation efforts
+        call: bureau-of-reclamation-reference-data.listgenerationefforts
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/reclamation-region
+      name: reclamation-region
+      description: REST surface for reclamation-region.
+      operations:
+      - method: GET
+        name: listreclamationregions
+        description: List Reclamation regions
+        call: bureau-of-reclamation-reference-data.listreclamationregions
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/state
+      name: state
+      description: REST surface for state.
+      operations:
+      - method: GET
+        name: liststates
+        description: List states
+        call: bureau-of-reclamation-reference-data.liststates
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/unified-region
+      name: unified-region
+      description: REST surface for unified-region.
+      operations:
+      - method: GET
+        name: listunifiedregions
+        description: List unified regions
+        call: bureau-of-reclamation-reference-data.listunifiedregions
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: bureau-of-reclamation-reference-data-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Reclamation Information Sharing Environment (RISE) API — Reference Data. One tool per consumed
+      operation, routed inline through this capability's consumes block.
+    tools:
+    - name: list-generation-efforts
+      description: List generation efforts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: bureau-of-reclamation-reference-data.listgenerationefforts
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-reclamation-regions
+      description: List Reclamation regions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: bureau-of-reclamation-reference-data.listreclamationregions
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-states
+      description: List states
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: bureau-of-reclamation-reference-data.liststates
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-unified-regions
+      description: List unified regions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: bureau-of-reclamation-reference-data.listunifiedregions
+      outputParameters:
+      - type: object
+        mapping: $.

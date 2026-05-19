@@ -1,0 +1,196 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Reclamation Information Sharing Environment (RISE) API — Catalog
+  description: 'Reclamation Information Sharing Environment (RISE) API — Catalog. 5 operations. Lead operation: List catalog
+    items. Self-contained Naftiko capability covering one Bureau Of Reclamation business surface.'
+  tags:
+  - Bureau Of Reclamation
+  - Catalog
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    BUREAU_OF_RECLAMATION_API_KEY: BUREAU_OF_RECLAMATION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: bureau-of-reclamation-catalog
+    baseUri: https://data.usbr.gov/rise/api
+    description: Reclamation Information Sharing Environment (RISE) API — Catalog business capability. Self-contained, no
+      shared references.
+    resources:
+    - name: catalog-item
+      path: /catalog-item
+      operations:
+      - name: listcatalogitems
+        method: GET
+        description: List catalog items
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: catalog-record
+      path: /catalog-record
+      operations:
+      - name: listcatalogrecords
+        method: GET
+        description: List catalog records
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: catalog-theme-type
+      path: /catalog-theme-type
+      operations:
+      - name: listcatalogthemetypes
+        method: GET
+        description: List catalog theme types
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: item-structure
+      path: /item-structure
+      operations:
+      - name: listitemstructures
+        method: GET
+        description: List item structures
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: sub-theme
+      path: /sub-theme
+      operations:
+      - name: listsubthemes
+        method: GET
+        description: List sub-themes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: bureau-of-reclamation-catalog-rest
+    port: 8080
+    description: REST adapter for Reclamation Information Sharing Environment (RISE) API — Catalog. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/catalog-item
+      name: catalog-item
+      description: REST surface for catalog-item.
+      operations:
+      - method: GET
+        name: listcatalogitems
+        description: List catalog items
+        call: bureau-of-reclamation-catalog.listcatalogitems
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/catalog-record
+      name: catalog-record
+      description: REST surface for catalog-record.
+      operations:
+      - method: GET
+        name: listcatalogrecords
+        description: List catalog records
+        call: bureau-of-reclamation-catalog.listcatalogrecords
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/catalog-theme-type
+      name: catalog-theme-type
+      description: REST surface for catalog-theme-type.
+      operations:
+      - method: GET
+        name: listcatalogthemetypes
+        description: List catalog theme types
+        call: bureau-of-reclamation-catalog.listcatalogthemetypes
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/item-structure
+      name: item-structure
+      description: REST surface for item-structure.
+      operations:
+      - method: GET
+        name: listitemstructures
+        description: List item structures
+        call: bureau-of-reclamation-catalog.listitemstructures
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/sub-theme
+      name: sub-theme
+      description: REST surface for sub-theme.
+      operations:
+      - method: GET
+        name: listsubthemes
+        description: List sub-themes
+        call: bureau-of-reclamation-catalog.listsubthemes
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: bureau-of-reclamation-catalog-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Reclamation Information Sharing Environment (RISE) API — Catalog. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: list-catalog-items
+      description: List catalog items
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: bureau-of-reclamation-catalog.listcatalogitems
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-catalog-records
+      description: List catalog records
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: bureau-of-reclamation-catalog.listcatalogrecords
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-catalog-theme-types
+      description: List catalog theme types
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: bureau-of-reclamation-catalog.listcatalogthemetypes
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-item-structures
+      description: List item structures
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: bureau-of-reclamation-catalog.listitemstructures
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-sub-themes
+      description: List sub-themes
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: bureau-of-reclamation-catalog.listsubthemes
+      outputParameters:
+      - type: object
+        mapping: $.

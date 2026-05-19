@@ -1,0 +1,132 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Reclamation Information Sharing Environment (RISE) API — Model Runs
+  description: 'Reclamation Information Sharing Environment (RISE) API — Model Runs. 3 operations. Lead operation: List model
+    names. Self-contained Naftiko capability covering one Bureau Of Reclamation business surface.'
+  tags:
+  - Bureau Of Reclamation
+  - Model Runs
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    BUREAU_OF_RECLAMATION_API_KEY: BUREAU_OF_RECLAMATION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: bureau-of-reclamation-model-runs
+    baseUri: https://data.usbr.gov/rise/api
+    description: Reclamation Information Sharing Environment (RISE) API — Model Runs business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: model-name
+      path: /model-name
+      operations:
+      - name: listmodelnames
+        method: GET
+        description: List model names
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: model-run
+      path: /model-run
+      operations:
+      - name: listmodelruns
+        method: GET
+        description: List model runs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: model-run-member
+      path: /model-run-member
+      operations:
+      - name: listmodelrunmembers
+        method: GET
+        description: List model run members
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: bureau-of-reclamation-model-runs-rest
+    port: 8080
+    description: REST adapter for Reclamation Information Sharing Environment (RISE) API — Model Runs. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/model-name
+      name: model-name
+      description: REST surface for model-name.
+      operations:
+      - method: GET
+        name: listmodelnames
+        description: List model names
+        call: bureau-of-reclamation-model-runs.listmodelnames
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/model-run
+      name: model-run
+      description: REST surface for model-run.
+      operations:
+      - method: GET
+        name: listmodelruns
+        description: List model runs
+        call: bureau-of-reclamation-model-runs.listmodelruns
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/model-run-member
+      name: model-run-member
+      description: REST surface for model-run-member.
+      operations:
+      - method: GET
+        name: listmodelrunmembers
+        description: List model run members
+        call: bureau-of-reclamation-model-runs.listmodelrunmembers
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: bureau-of-reclamation-model-runs-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Reclamation Information Sharing Environment (RISE) API — Model Runs. One tool per consumed
+      operation, routed inline through this capability's consumes block.
+    tools:
+    - name: list-model-names
+      description: List model names
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: bureau-of-reclamation-model-runs.listmodelnames
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-model-runs
+      description: List model runs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: bureau-of-reclamation-model-runs.listmodelruns
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-model-run-members
+      description: List model run members
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: bureau-of-reclamation-model-runs.listmodelrunmembers
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,100 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Reclamation Information Sharing Environment (RISE) API — Locations
+  description: 'Reclamation Information Sharing Environment (RISE) API — Locations. 2 operations. Lead operation: List monitoring
+    locations. Self-contained Naftiko capability covering one Bureau Of Reclamation business surface.'
+  tags:
+  - Bureau Of Reclamation
+  - Locations
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    BUREAU_OF_RECLAMATION_API_KEY: BUREAU_OF_RECLAMATION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: bureau-of-reclamation-locations
+    baseUri: https://data.usbr.gov/rise/api
+    description: Reclamation Information Sharing Environment (RISE) API — Locations business capability. Self-contained, no
+      shared references.
+    resources:
+    - name: location
+      path: /location
+      operations:
+      - name: listlocations
+        method: GET
+        description: List monitoring locations
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: location-type
+      path: /location-type
+      operations:
+      - name: listlocationtypes
+        method: GET
+        description: List location types
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: bureau-of-reclamation-locations-rest
+    port: 8080
+    description: REST adapter for Reclamation Information Sharing Environment (RISE) API — Locations. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/location
+      name: location
+      description: REST surface for location.
+      operations:
+      - method: GET
+        name: listlocations
+        description: List monitoring locations
+        call: bureau-of-reclamation-locations.listlocations
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/location-type
+      name: location-type
+      description: REST surface for location-type.
+      operations:
+      - method: GET
+        name: listlocationtypes
+        description: List location types
+        call: bureau-of-reclamation-locations.listlocationtypes
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: bureau-of-reclamation-locations-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Reclamation Information Sharing Environment (RISE) API — Locations. One tool per consumed
+      operation, routed inline through this capability's consumes block.
+    tools:
+    - name: list-monitoring-locations
+      description: List monitoring locations
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: bureau-of-reclamation-locations.listlocations
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-location-types
+      description: List location types
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: bureau-of-reclamation-locations.listlocationtypes
+      outputParameters:
+      - type: object
+        mapping: $.

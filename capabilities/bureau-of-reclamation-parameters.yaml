@@ -1,0 +1,100 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Reclamation Information Sharing Environment (RISE) API — Parameters
+  description: 'Reclamation Information Sharing Environment (RISE) API — Parameters. 2 operations. Lead operation: List parameters.
+    Self-contained Naftiko capability covering one Bureau Of Reclamation business surface.'
+  tags:
+  - Bureau Of Reclamation
+  - Parameters
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    BUREAU_OF_RECLAMATION_API_KEY: BUREAU_OF_RECLAMATION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: bureau-of-reclamation-parameters
+    baseUri: https://data.usbr.gov/rise/api
+    description: Reclamation Information Sharing Environment (RISE) API — Parameters business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: parameter
+      path: /parameter
+      operations:
+      - name: listparameters
+        method: GET
+        description: List parameters
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: parameter-group
+      path: /parameter-group
+      operations:
+      - name: listparametergroups
+        method: GET
+        description: List parameter groups
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: bureau-of-reclamation-parameters-rest
+    port: 8080
+    description: REST adapter for Reclamation Information Sharing Environment (RISE) API — Parameters. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/parameter
+      name: parameter
+      description: REST surface for parameter.
+      operations:
+      - method: GET
+        name: listparameters
+        description: List parameters
+        call: bureau-of-reclamation-parameters.listparameters
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/parameter-group
+      name: parameter-group
+      description: REST surface for parameter-group.
+      operations:
+      - method: GET
+        name: listparametergroups
+        description: List parameter groups
+        call: bureau-of-reclamation-parameters.listparametergroups
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: bureau-of-reclamation-parameters-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Reclamation Information Sharing Environment (RISE) API — Parameters. One tool per consumed
+      operation, routed inline through this capability's consumes block.
+    tools:
+    - name: list-parameters
+      description: List parameters
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: bureau-of-reclamation-parameters.listparameters
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-parameter-groups
+      description: List parameter groups
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: bureau-of-reclamation-parameters.listparametergroups
+      outputParameters:
+      - type: object
+        mapping: $.
