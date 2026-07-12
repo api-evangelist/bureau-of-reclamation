@@ -76,6 +76,8 @@ apis:
       - path: /model-run
         description: Query model run data
 common:
+  - type: DomainSecurity
+    url: security/bureau-of-reclamation-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/usbr
   - type: LinkedIn
