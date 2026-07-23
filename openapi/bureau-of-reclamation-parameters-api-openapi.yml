@@ -1,0 +1,44 @@
+openapi: 3.1.0
+info:
+  title: Reclamation Information Sharing Environment (RISE) Catalog Parameters API
+  version: '1.0'
+  description: Minimal OpenAPI 3.1 description of the Bureau of Reclamation's RISE API, which exposes catalog, location, parameter, model run, and time series result resources for water resource data across Reclamation regions.
+  x-generated-from: https://data.usbr.gov/rise/api
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+- url: https://data.usbr.gov/rise/api
+  description: Production
+tags:
+- name: Parameters
+paths:
+  /parameter:
+    get:
+      tags:
+      - Parameters
+      summary: List parameters
+      operationId: listParameters
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CollectionResponse'
+  /parameter-group:
+    get:
+      tags:
+      - Parameters
+      summary: List parameter groups
+      operationId: listParameterGroups
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CollectionResponse'
+components:
+  schemas:
+    CollectionResponse:
+      type: object
+      additionalProperties: true
