@@ -10,7 +10,19 @@ tags:
   - Reservoirs
 type: Index
 kind: government
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/bureau-of-reclamation.png
 access: 3rd-Party
 created: '2024-11-30'
 modified: '2026-05-19'
@@ -21,60 +33,102 @@ description: >-
   Reclamation has constructed more than 600 dams and reservoirs including Hoover Dam on the Colorado River and Grand
   Coulee on the Columbia River.
 apis:
-  - aid: bureau-of-reclamation:reclamation-information-sharing-environment-rise
-    name: Reclamation Information Sharing Environment (RISE) API
-    tags:
-      - Federal Government
-      - Water
-      - Hydrology
-      - Time Series
-    humanURL: https://data.usbr.gov/rise/api
-    baseURL: https://data.usbr.gov/rise/api/
-    properties:
-      - url: https://data.usbr.gov/rise/api
-        type: Documentation
-      - url: https://data.usbr.gov/
-        type: Portal
-      - url: https://catalog.data.gov/dataset?organization=usbr-gov
-        type: DataAPI
-      - url: openapi/bureau-of-reclamation-openapi.yml
-        type: OpenAPI
-    description: >-
-      The RISE API allows users to query Bureau of Reclamation water resource data programmatically, returning JSON
-      objects. For Geospatial and File Upload datasets, only metadata can be queried. For time series datasets, both
-      metadata and data can be queried. Data includes hydrometric measurements, reservoir levels, streamflow, and water
-      quality.
-    features:
-      - Time Series Data
-      - Hydrometric Measurements
-      - Reservoir Level Data
-      - Streamflow Data
-      - Water Quality Data
-      - Geospatial Metadata
-      - JSON Format
-      - Paginated Results
-    useCases:
-      - Water resource planning
-      - Drought monitoring
-      - Hydroelectric generation analysis
-      - Environmental flow studies
-      - Water rights management
-      - Climate research
-    endpoints:
-      - path: /catalog-item
-        description: Query catalog items
-      - path: /catalog-record
-        description: Query catalog records
-      - path: /location
-        description: Query monitoring locations
-      - path: /parameter
-        description: Query measured parameters
-      - path: /result
-        description: Query time series results
-      - path: /reclamation-region
-        description: Query Reclamation regions
-      - path: /model-run
-        description: Query model run data
+- aid: bureau-of-reclamation:bureau-of-reclamation-catalog-api
+  name: Bureau of Reclamation Catalog API
+  description: The Catalog API from Bureau of Reclamation — 5 operation(s) for catalog.
+  humanURL: https://data.usbr.gov/rise/api
+  baseURL: https://data.usbr.gov/rise/api/
+  tags:
+  - Catalog
+  properties:
+  - type: OpenAPI
+    url: openapi/bureau-of-reclamation-catalog-api-openapi.yml
+  - type: Documentation
+    url: https://data.usbr.gov/rise/api
+  - type: Portal
+    url: https://data.usbr.gov/
+  - type: DataAPI
+    url: https://catalog.data.gov/dataset?organization=usbr-gov
+- aid: bureau-of-reclamation:bureau-of-reclamation-locations-api
+  name: Bureau of Reclamation Locations API
+  description: The Locations API from Bureau of Reclamation — 2 operation(s) for locations.
+  humanURL: https://data.usbr.gov/rise/api
+  baseURL: https://data.usbr.gov/rise/api/
+  tags:
+  - Locations
+  properties:
+  - type: OpenAPI
+    url: openapi/bureau-of-reclamation-locations-api-openapi.yml
+  - type: Documentation
+    url: https://data.usbr.gov/rise/api
+  - type: Portal
+    url: https://data.usbr.gov/
+  - type: DataAPI
+    url: https://catalog.data.gov/dataset?organization=usbr-gov
+- aid: bureau-of-reclamation:bureau-of-reclamation-model-runs-api
+  name: Bureau of Reclamation Model Runs API
+  description: The Model Runs API from Bureau of Reclamation — 3 operation(s) for model runs.
+  humanURL: https://data.usbr.gov/rise/api
+  baseURL: https://data.usbr.gov/rise/api/
+  tags:
+  - Model Runs
+  properties:
+  - type: OpenAPI
+    url: openapi/bureau-of-reclamation-model-runs-api-openapi.yml
+  - type: Documentation
+    url: https://data.usbr.gov/rise/api
+  - type: Portal
+    url: https://data.usbr.gov/
+  - type: DataAPI
+    url: https://catalog.data.gov/dataset?organization=usbr-gov
+- aid: bureau-of-reclamation:bureau-of-reclamation-parameters-api
+  name: Bureau of Reclamation Parameters API
+  description: The Parameters API from Bureau of Reclamation — 2 operation(s) for parameters.
+  humanURL: https://data.usbr.gov/rise/api
+  baseURL: https://data.usbr.gov/rise/api/
+  tags:
+  - Parameters
+  properties:
+  - type: OpenAPI
+    url: openapi/bureau-of-reclamation-parameters-api-openapi.yml
+  - type: Documentation
+    url: https://data.usbr.gov/rise/api
+  - type: Portal
+    url: https://data.usbr.gov/
+  - type: DataAPI
+    url: https://catalog.data.gov/dataset?organization=usbr-gov
+- aid: bureau-of-reclamation:bureau-of-reclamation-reference-data-api
+  name: Bureau of Reclamation Reference Data API
+  description: The Reference Data API from Bureau of Reclamation — 4 operation(s) for reference data.
+  humanURL: https://data.usbr.gov/rise/api
+  baseURL: https://data.usbr.gov/rise/api/
+  tags:
+  - Reference Data
+  properties:
+  - type: OpenAPI
+    url: openapi/bureau-of-reclamation-reference-data-api-openapi.yml
+  - type: Documentation
+    url: https://data.usbr.gov/rise/api
+  - type: Portal
+    url: https://data.usbr.gov/
+  - type: DataAPI
+    url: https://catalog.data.gov/dataset?organization=usbr-gov
+- aid: bureau-of-reclamation:bureau-of-reclamation-results-api
+  name: Bureau of Reclamation Results API
+  description: The Results API from Bureau of Reclamation — 1 operation(s) for results.
+  humanURL: https://data.usbr.gov/rise/api
+  baseURL: https://data.usbr.gov/rise/api/
+  tags:
+  - Results
+  properties:
+  - type: OpenAPI
+    url: openapi/bureau-of-reclamation-results-api-openapi.yml
+  - type: Documentation
+    url: https://data.usbr.gov/rise/api
+  - type: Portal
+    url: https://data.usbr.gov/
+  - type: DataAPI
+    url: https://catalog.data.gov/dataset?organization=usbr-gov
 common:
   - type: AgenticAccess
     url: agentic-access/bureau-of-reclamation-agentic-access.yml
