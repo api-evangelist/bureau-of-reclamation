@@ -1,0 +1,24 @@
+{
+  "provider": "bureau-of-reclamation",
+  "sources": [
+    "bureau-of-reclamation-catalog-api-openapi.yml",
+    "bureau-of-reclamation-locations-api-openapi.yml",
+    "bureau-of-reclamation-model-runs-api-openapi.yml",
+    "bureau-of-reclamation-parameters-api-openapi.yml",
+    "bureau-of-reclamation-reference-data-api-openapi.yml",
+    "bureau-of-reclamation-results-api-openapi.yml"
+  ],
+  "outputs": [
+    "bureau-of-reclamation-catalog-api-openapi.yml",
+    "bureau-of-reclamation-locations-api-openapi.yml",
+    "bureau-of-reclamation-model-runs-api-openapi.yml",
+    "bureau-of-reclamation-parameters-api-openapi.yml",
+    "bureau-of-reclamation-reference-data-api-openapi.yml",
+    "bureau-of-reclamation-results-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
