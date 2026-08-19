@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Reclamation Information Sharing Environment (RISE) Catalog Model Runs API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Model Runs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List model names",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://data.usbr.gov/rise/api/model-name"
+          },
+          "docs": "List model names"
+        },
+        {
+          "info": {
+            "name": "List model runs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://data.usbr.gov/rise/api/model-run"
+          },
+          "docs": "List model runs"
+        },
+        {
+          "info": {
+            "name": "List model run members",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://data.usbr.gov/rise/api/model-run-member"
+          },
+          "docs": "List model run members"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

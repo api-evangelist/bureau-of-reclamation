@@ -1,0 +1,52 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Reclamation Information Sharing Environment (RISE) Catalog Locations API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Locations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List monitoring locations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://data.usbr.gov/rise/api/location",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "itemsPerPage",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List monitoring locations"
+        },
+        {
+          "info": {
+            "name": "List location types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://data.usbr.gov/rise/api/location-type"
+          },
+          "docs": "List location types"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

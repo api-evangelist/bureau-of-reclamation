@@ -1,0 +1,119 @@
+{
+  "item": [
+    {
+      "id": "2930eaae-7384-4ffc-891d-9b94a2697d76",
+      "name": "Results",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cbd08135-cb55-4d8c-bbd5-7963f2fd566e",
+          "name": "List time series results",
+          "request": {
+            "name": "List time series results",
+            "description": {},
+            "url": {
+              "path": [
+                "result"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "itemsPerPage",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "907d1589-5d0c-4d54-819c-5bbdf40a9db3",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "result"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "itemsPerPage",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": \"string\",\n  \"key_1\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://data.usbr.gov/rise/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8e38f1ec-e63a-4e1d-8f84-8b7283bb746e",
+    "name": "Reclamation Information Sharing Environment (RISE) Catalog Results API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Minimal OpenAPI 3.1 description of the Bureau of Reclamation's RISE API, which exposes catalog, location, parameter, model run, and time series result resources for water resource data across Reclamation regions.",
+      "type": "text/plain"
+    }
+  }
+}

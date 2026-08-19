@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Reclamation Information Sharing Environment (RISE) Catalog Reference Data API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Reference Data",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List generation efforts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://data.usbr.gov/rise/api/generation-effort"
+          },
+          "docs": "List generation efforts"
+        },
+        {
+          "info": {
+            "name": "List Reclamation regions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://data.usbr.gov/rise/api/reclamation-region"
+          },
+          "docs": "List Reclamation regions"
+        },
+        {
+          "info": {
+            "name": "List states",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://data.usbr.gov/rise/api/state"
+          },
+          "docs": "List states"
+        },
+        {
+          "info": {
+            "name": "List unified regions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://data.usbr.gov/rise/api/unified-region"
+          },
+          "docs": "List unified regions"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

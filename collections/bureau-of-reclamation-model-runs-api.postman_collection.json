@@ -1,0 +1,233 @@
+{
+  "item": [
+    {
+      "id": "08511dc2-e644-486a-9492-0dc5fde781f0",
+      "name": "Model Runs",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8c7b1aff-1e1b-452a-8173-4cdbd72ace89",
+          "name": "List model names",
+          "request": {
+            "name": "List model names",
+            "description": {},
+            "url": {
+              "path": [
+                "model-name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cf8aa966-beb3-45ef-a3f7-33f67f58087f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "model-name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": 3247,\n  \"key_1\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "adde65c5-825d-4940-b3e9-334485dc66e7",
+          "name": "List model runs",
+          "request": {
+            "name": "List model runs",
+            "description": {},
+            "url": {
+              "path": [
+                "model-run"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "50d7e2cc-a9a2-4210-91b4-9689c7392ef6",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "model-run"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": 3247,\n  \"key_1\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "be3cd064-d58a-4a5b-b6fe-890a8970fdfa",
+          "name": "List model run members",
+          "request": {
+            "name": "List model run members",
+            "description": {},
+            "url": {
+              "path": [
+                "model-run-member"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3cda2cf7-9b09-4197-9a4e-ff32efdda077",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "model-run-member"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": 3247,\n  \"key_1\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://data.usbr.gov/rise/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "365bfab3-2f31-4bf9-9adc-2a041268ef76",
+    "name": "Reclamation Information Sharing Environment (RISE) Catalog Model Runs API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Minimal OpenAPI 3.1 description of the Bureau of Reclamation's RISE API, which exposes catalog, location, parameter, model run, and time series result resources for water resource data across Reclamation regions.",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Reclamation Information Sharing Environment (RISE) Catalog Parameters API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Parameters",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List parameters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://data.usbr.gov/rise/api/parameter"
+          },
+          "docs": "List parameters"
+        },
+        {
+          "info": {
+            "name": "List parameter groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://data.usbr.gov/rise/api/parameter-group"
+          },
+          "docs": "List parameter groups"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

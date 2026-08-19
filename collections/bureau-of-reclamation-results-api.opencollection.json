@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Reclamation Information Sharing Environment (RISE) Catalog Results API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Results",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List time series results",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://data.usbr.gov/rise/api/result",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "itemsPerPage",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List time series results"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
