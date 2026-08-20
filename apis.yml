@@ -3,6 +3,13 @@ url: https://raw.githubusercontent.com/api-evangelist/bureau-of-reclamation/refs
 name: Bureau of Reclamation
 tags:
   - Energy
+  - Federal-Government
+  - Infrastructure
+  - Water
+  - Hydrology
+  - Reservoirs
+tags_raw:
+  - Energy
   - Federal Government
   - Infrastructure
   - Water
