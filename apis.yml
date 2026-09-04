@@ -44,7 +44,7 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/bureau-of-
 access: 3rd-Party
 created: '2024-11-30'
 modified: '2026-05-19'
-position: Consumer
+position: Consuming
 description: >-
   Established in 1902, the Bureau of Reclamation is best known for the dams, powerplants, and canals it constructed in
   the 17 western states. These water projects led to homesteading and promoted the economic development of the West.
