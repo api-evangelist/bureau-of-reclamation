@@ -73,6 +73,8 @@ apis:
   humanURL: https://data.usbr.gov/rise/api
   baseURL: https://data.usbr.gov/rise/api/
   tags:
+  - Location
+  tags_raw:
   - Locations
   properties:
   - type: OpenAPI
