@@ -83,10 +83,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/CollectionResponse'
 components:
-  schemas:
-    CollectionResponse:
-      type: object
-      additionalProperties: true
   parameters:
     PageParam:
       name: page
@@ -100,3 +96,7 @@ components:
       schema:
         type: integer
         minimum: 1
+  schemas:
+    CollectionResponse:
+      type: object
+      additionalProperties: true
