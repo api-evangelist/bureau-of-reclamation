@@ -1,4 +1,4 @@
-# Bureau of Reclamation (bureau-of-reclamation)
+# Bureau of Reclamation
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,63 +66,125 @@
 
 Established in 1902, the Bureau of Reclamation is best known for the dams, powerplants, and canals it constructed in the 17 western states. These water projects led to homesteading and promoted the economic development of the West. Reclamation has constructed more than 600 dams and reservoirs including Hoover Dam on the Colorado River and Grand Coulee on the Columbia River.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/bureau-of-reclamation/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/bureau-of-reclamation/refs/heads/main/apis.yml)
+**Areas:** Energy · Federal Government · Infrastructure · Water · Hydrology · Reservoirs
 
-## Scope
+## Bureau of Reclamation on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for Bureau of Reclamation is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/bureau-of-reclamation/](https://apis.io/providers/bureau-of-reclamation/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (6)
 
-- Energy
-- Federal Government
-- Infrastructure
-- Water
-- Hydrology
-- Reservoirs
+- [Bureau of Reclamation Catalog API](https://apis.io/apis/bureau-of-reclamation/bureau-of-reclamation-catalog-api/) — The Catalog API from Bureau of Reclamation — 5 operation(s) for catalog.
+- [Bureau of Reclamation Locations API](https://apis.io/apis/bureau-of-reclamation/bureau-of-reclamation-locations-api/) — The Locations API from Bureau of Reclamation — 2 operation(s) for locations.
+- [Bureau of Reclamation Model Runs API](https://apis.io/apis/bureau-of-reclamation/bureau-of-reclamation-model-runs-api/) — The Model Runs API from Bureau of Reclamation — 3 operation(s) for model runs.
+- [Bureau of Reclamation Parameters API](https://apis.io/apis/bureau-of-reclamation/bureau-of-reclamation-parameters-api/) — The Parameters API from Bureau of Reclamation — 2 operation(s) for parameters.
+- [Bureau of Reclamation Reference Data API](https://apis.io/apis/bureau-of-reclamation/bureau-of-reclamation-reference-data-api/) — The Reference Data API from Bureau of Reclamation — 4 operation(s) for reference data.
+- [Bureau of Reclamation Results API](https://apis.io/apis/bureau-of-reclamation/bureau-of-reclamation-results-api/) — The Results API from Bureau of Reclamation — 1 operation(s) for results.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-11-30
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Reclamation Information Sharing Environment (RISE) API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The RISE API allows users to query Bureau of Reclamation water resource data programmatically, returning JSON objects. For Geospatial and File Upload datasets, only metadata can be queried. For time series datasets, both metadata and data can be queried. Data includes hydrometric measurements, reservoir levels, streamflow, and water quality.
+- [Bureau Of Reclamation Agentic Access](https://apis.io/agentic-access/bureau-of-reclamation/bureau-of-reclamation-agentic-access/)
 
-- **Human URL:** [https://data.usbr.gov/rise/api](https://data.usbr.gov/rise/api)
-- **Base URL:** `https://data.usbr.gov/rise/api/`
+#### Collections (7)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Federal Government
-- Water
-- Hydrology
-- Time Series
+- [Reclamation Information Sharing Environment (RISE) API](https://apis.io/collections/bureau-of-reclamation/open-bureau-of-reclamation/)
+- [Reclamation Information Sharing Environment (RISE) Catalog API](https://apis.io/collections/bureau-of-reclamation/open-bureau-of-reclamation-catalog-api/)
+- [Reclamation Information Sharing Environment (RISE) Catalog Locations API](https://apis.io/collections/bureau-of-reclamation/open-bureau-of-reclamation-locations-api/)
+- [Reclamation Information Sharing Environment (RISE) Catalog Model Runs API](https://apis.io/collections/bureau-of-reclamation/open-bureau-of-reclamation-model-runs-api/)
+- [Reclamation Information Sharing Environment (RISE) Catalog Parameters API](https://apis.io/collections/bureau-of-reclamation/open-bureau-of-reclamation-parameters-api/)
+- [Reclamation Information Sharing Environment (RISE) Catalog Reference Data API](https://apis.io/collections/bureau-of-reclamation/open-bureau-of-reclamation-reference-data-api/)
+- [Reclamation Information Sharing Environment (RISE) Catalog Results API](https://apis.io/collections/bureau-of-reclamation/open-bureau-of-reclamation-results-api/)
 
-#### Properties
+#### Security (1)
 
-- [Documentation](https://data.usbr.gov/rise/api)
-- [Portal](https://data.usbr.gov/)
-- [Data A P I](https://catalog.data.gov/dataset?organization=usbr-gov)
-- [OpenAPI](openapi/bureau-of-reclamation-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/bureau-of-reclamation.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/bureau-of-reclamation.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Common Properties
+- [Bureau Of Reclamation Domain Security](https://apis.io/security/bureau-of-reclamation/bureau-of-reclamation-domain-security/)
 
-- [GitHub Organization](https://github.com/usbr)
-- [LinkedIn](https://www.linkedin.com/company/bureau-of-reclamation)
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Bureau Of Reclamation Plans Pricing](https://apis.io/plans/bureau-of-reclamation/bureau-of-reclamation-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Bureau Of Reclamation Rate Limits](https://apis.io/rate-limits/bureau-of-reclamation/bureau-of-reclamation-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Bureau Of Reclamation Finops](https://apis.io/finops/bureau-of-reclamation/bureau-of-reclamation-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.usbr.gov)
-- [Portal](https://data.usbr.gov/)
-- [Privacy Policy](https://www.usbr.gov/privacy.html)
-- [Data  Portal](https://catalog.data.gov/dataset?organization=usbr-gov)
+- [Blog](https://www.usbr.gov/newsroom/)
+- [Privacy policy](https://www.usbr.gov/privacy.html)
+- [GitHub](https://github.com/usbr)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 22.8** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 71.4 |
+| Contract quality | 38.6 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 21.4 |
+| Access clarity | 7.9 |
+
+**Agent readiness 17.8** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 4.9** — Energy & Utilities
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/bureau-of-reclamation/](https://apis.io/providers/bureau-of-reclamation/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Bureau of Reclamation: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/bureau-of-reclamation/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
